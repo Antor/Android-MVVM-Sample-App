@@ -11,7 +11,7 @@ public class CreateMessageInteractor {
 
     private final MessageDao messageDao;
 
-    // TODO: @Inject
+    @Inject
     public CreateMessageInteractor(MessageDao messageDao) {
         this.messageDao = messageDao;
     }

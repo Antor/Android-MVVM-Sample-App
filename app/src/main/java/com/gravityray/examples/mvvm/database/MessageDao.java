@@ -3,6 +3,7 @@ package com.gravityray.examples.mvvm.database;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.gravityray.examples.mvvm.models.database.MessageEntity;
 
@@ -25,20 +26,6 @@ public abstract class MessageDao {
     @Query("DELETE FROM Messages WHERE _id=:messageId")
     public abstract void deleteMessage(int messageId);
 
-    /*
-     @Query("SELECT * FROM Stores")
-    public abstract Flowable<List<StoreEntity>> getAllStores();
-
-    @Query("SELECT * FROM Stores WHERE favorite=1")
-    public abstract Flowable<List<StoreEntity>> getAllFavoriteStores2();
-
-    @Insert
-    public abstract void insertStore(StoreEntity storeEntity);
-
-    @Query("UPDATE Stores SET favorite=:isFavorite WHERE _id=:id")
-    public abstract void updateFavoriteStore(long id, int isFavorite);
-
-    @Query("DELETE FROM Stores")
-    public abstract void deleteAllStores();
-     */
+    @Update
+    public abstract void updateMessage(MessageEntity message);
 }
